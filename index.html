@@ -3,522 +3,2579 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Medigo</title>
+    <title>MediGo - Revolutionary Digital Pharmacy</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="digital pharmacy, medication delivery, healthcare, Kenya" name="keywords">
+    <meta content="MediGo Kenya - Revolutionary digital pharmacy platform transforming healthcare access across Kenya." name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💊</text></svg>">
 
-    <!-- Google Web Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #337aff;
+            --secondary: #00D4AA;
+            --accent: #FFD23F;
+            --purple: #8B5CF6;
+            --blue: #3B82F6;
+            --dark: #0F0F23;
+            --dark-light: #1A1A2E;
+            --gray-100: #F8FAFC;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1E293B;
+            --gray-900: #0F172A;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #f19a9a;
+            
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            --border-radius: 0.75rem;
+            --border-radius-lg: 1rem;
+            --border-radius-xl: 1.5rem;
+            --border-radius-2xl: 2rem;
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Responsive spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --spacing-4xl: 6rem;
+            
+            /* Container widths */
+            --container-sm: 640px;
+            --container-md: 768px;
+            --container-lg: 1024px;
+            --container-xl: 1280px;
+            --container-2xl: 1536px;
+        }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Container System */
+        .container {
+            width: 100%;
+            max-width: var(--container-xl);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+
+        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+        @media (min-width: 640px) {
+            .sm\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+            .sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .sm\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+            .lg\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        /* Flexbox Utilities */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-wrap { flex-wrap: wrap; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-1 { gap: var(--spacing-xs); }
+        .gap-2 { gap: var(--spacing-sm); }
+        .gap-3 { gap: var(--spacing-md); }
+        .gap-4 { gap: var(--spacing-lg); }
+        .gap-6 { gap: var(--spacing-xl); }
+
+        /* Responsive Display */
+        .hidden { display: none; }
+        .block { display: block; }
+
+        @media (min-width: 640px) {
+            .sm\:block { display: block; }
+            .sm\:hidden { display: none; }
+            .sm\:flex { display: flex; }
+        }
+
+        @media (min-width: 768px) {
+            .md\:block { display: block; }
+            .md\:hidden { display: none; }
+            .md\:flex { display: flex; }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:block { display: block; }
+            .lg\:hidden { display: none; }
+            .lg\:flex { display: flex; }
+        }
+
+        /* Responsive Spacing */
+        .p-2 { padding: var(--spacing-sm); }
+        .p-3 { padding: var(--spacing-md); }
+        .p-4 { padding: var(--spacing-lg); }
+        .p-6 { padding: var(--spacing-xl); }
+        .p-8 { padding: var(--spacing-2xl); }
+
+        .px-2 { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); }
+        .px-3 { padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+        .px-4 { padding-left: var(--spacing-lg); padding-right: var(--spacing-lg); }
+        .px-6 { padding-left: var(--spacing-xl); padding-right: var(--spacing-xl); }
+
+        .py-2 { padding-top: var(--spacing-sm); padding-bottom: var(--spacing-sm); }
+        .py-3 { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
+        .py-4 { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg); }
+        .py-6 { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+        .py-8 { padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl); }
+        .py-12 { padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); }
+        .py-16 { padding-top: var(--spacing-4xl); padding-bottom: var(--spacing-4xl); }
+
+        .m-2 { margin: var(--spacing-sm); }
+        .m-3 { margin: var(--spacing-md); }
+        .m-4 { margin: var(--spacing-lg); }
+
+        .mb-2 { margin-bottom: var(--spacing-sm); }
+        .mb-3 { margin-bottom: var(--spacing-md); }
+        .mb-4 { margin-bottom: var(--spacing-lg); }
+        .mb-6 { margin-bottom: var(--spacing-xl); }
+        .mb-8 { margin-bottom: var(--spacing-2xl); }
+
+        .mt-2 { margin-top: var(--spacing-sm); }
+        .mt-3 { margin-top: var(--spacing-md); }
+        .mt-4 { margin-top: var(--spacing-lg); }
+        .mt-6 { margin-top: var(--spacing-xl); }
+        .mt-8 { margin-top: var(--spacing-2xl); }
+
+        @media (min-width: 640px) {
+            .sm\:p-4 { padding: var(--spacing-lg); }
+            .sm\:p-6 { padding: var(--spacing-xl); }
+            .sm\:p-8 { padding: var(--spacing-2xl); }
+            .sm\:py-8 { padding-top: var(--spacing-2xl); padding-bottom: var(--spacing-2xl); }
+            .sm\:py-12 { padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); }
+            .sm\:py-16 { padding-top: var(--spacing-4xl); padding-bottom: var(--spacing-4xl); }
+        }
+
+        @media (min-width: 768px) {
+            .md\:p-6 { padding: var(--spacing-xl); }
+            .md\:p-8 { padding: var(--spacing-2xl); }
+            .md\:py-12 { padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); }
+            .md\:py-16 { padding-top: var(--spacing-4xl); padding-bottom: var(--spacing-4xl); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:p-8 { padding: var(--spacing-2xl); }
+            .lg\:py-16 { padding-top: var(--spacing-4xl); padding-bottom: var(--spacing-4xl); }
+            .lg\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        }
+
+        /* Responsive Text */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+
+        @media (min-width: 640px) {
+            .sm\:text-center { text-align: center; }
+            .sm\:text-left { text-align: left; }
+        }
+
+        @media (min-width: 768px) {
+            .md\:text-center { text-align: center; }
+            .md\:text-left { text-align: left; }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:text-center { text-align: center; }
+            .lg\:text-left { text-align: left; }
+        }
+
+        /* Memphis Design System */
+        .memphis-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .memphis-shape {
+            position: absolute;
+            opacity: 0.08;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .memphis-shape:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            width: clamp(40px, 8vw, 80px);
+            height: clamp(40px, 8vw, 80px);
+            background: var(--primary);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .memphis-shape:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            width: clamp(30px, 6vw, 60px);
+            height: clamp(30px, 6vw, 60px);
+            background: var(--secondary);
+            transform: rotate(45deg);
+            animation-delay: 1s;
+        }
+
+        .memphis-shape:nth-child(3) {
+            bottom: 30%;
+            left: 15%;
+            width: clamp(50px, 10vw, 100px);
+            height: clamp(10px, 2vw, 20px);
+            background: var(--accent);
+            border-radius: 10px;
+            animation-delay: 2s;
+        }
+
+        .memphis-shape:nth-child(4) {
+            bottom: 10%;
+            right: 5%;
+            width: 0;
+            height: 0;
+            border-left: clamp(15px, 3vw, 30px) solid transparent;
+            border-right: clamp(15px, 3vw, 30px) solid transparent;
+            border-bottom: clamp(25px, 5vw, 50px) solid var(--purple);
+            animation-delay: 3s;
+        }
+
+        .memphis-dots {
+            position: absolute;
+            width: clamp(100px, 20vw, 200px);
+            height: clamp(100px, 20vw, 200px);
+            background-image: radial-gradient(var(--blue) 2px, transparent 2px);
+            background-size: 20px 20px;
+            opacity: 0.03;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .memphis-zigzag {
+            position: absolute;
+            width: 100%;
+            height: clamp(15px, 3vw, 30px);
+            background: linear-gradient(45deg, var(--accent) 25%, transparent 25%) -15px 0,
+                        linear-gradient(-45deg, var(--accent) 25%, transparent 25%) -15px 0;
+            background-size: 30px 30px;
+            opacity: 0.02;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Typography */
+        .display-1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .display-2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .display-3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 3vw, 2.25rem);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .text-lg {
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+        }
+
+        .text-base {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+
+        .text-sm {
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-secondary {
+            background: linear-gradient(135deg, var(--secondary), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 2rem);
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            line-height: 1;
+            text-decoration: none;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #9e6873);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary), #00BFA5);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gray-800);
+            border: 2px solid var(--gray-300);
+        }
+
+        .btn-outline:hover {
+            background: var(--gray-800);
+            color: var(--white);
+            border-color: var(--gray-800);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile button adjustments */
+        @media (max-width: 640px) {
+            .btn {
+                width: 100%;
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-group .btn {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .btn-group .btn:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: var(--spacing-md) 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: var(--spacing-sm) 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 800;
+            color: var(--gray-800);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .navbar-brand i {
+            color: var(--primary);
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            list-style: none;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--gray-700);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .navbar-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--gray-800);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .navbar-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .navbar-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 1023px) {
+            .navbar-nav {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                gap: 0;
+                padding: var(--spacing-xl);
+                box-shadow: var(--shadow-xl);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+
+            .navbar-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .navbar-nav li {
+                width: 100%;
+                text-align: center;
+                padding: var(--spacing-md) 0;
+                border-bottom: 1px solid var(--gray-200);
+            }
+
+            .navbar-nav li:last-child {
+                border-bottom: none;
+            }
+
+            .navbar-toggle {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-3xl);
+            }
+        }
+
+        .hero-content h1 {
+            color: var(--white);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-xl);
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-2xl) 0;
+        }
+
+        @media (min-width: 640px) {
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--spacing-xl);
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            margin-top: var(--spacing-sm);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            order: -1;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-visual {
+                order: 0;
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: var(--border-radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            position: relative;
+            z-index: 2;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-xl);
+            animation: float 3s ease-in-out infinite;
+            max-width: 200px;
+        }
+
+        .floating-card-1 {
+            top: 10%;
+            left: -5%;
+            animation-delay: 0s;
+        }
+
+        .floating-card-2 {
+            bottom: 20%;
+            right: -10%;
+            animation-delay: 1.5s;
+        }
+
+        @media (max-width: 768px) {
+            .floating-card {
+                display: none;
+            }
+        }
+
+        .floating-card h4 {
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .floating-card p {
+            font-size: clamp(0.625rem, 1.25vw, 0.75rem);
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        /* Section Layouts */
+        .section {
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        @media (min-width: 768px) {
+            .section-header {
+                margin-bottom: var(--spacing-4xl);
+            }
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: var(--white);
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            font-weight: 600;
+            border-radius: 50px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-title {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-description {
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--gray-100);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-4xl);
+            }
+        }
+
+        .about-visual {
+            position: relative;
+            order: -1;
+        }
+
+        @media (min-width: 1024px) {
+            .about-visual {
+                order: 0;
+            }
+        }
+
+        .about-image-main {
+            width: 100%;
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-image-overlay {
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            width: 50%;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            border: 4px solid var(--white);
+        }
+
+        @media (min-width: 640px) {
+            .about-image-overlay {
+                bottom: -2rem;
+                right: -2rem;
+                width: 60%;
+            }
+        }
+
+        .about-content h3 {
+            color: var(--gray-800);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-content p {
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        @media (min-width: 640px) {
+            .feature-list li {
+                align-items: center;
+                padding: var(--spacing-lg);
+            }
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+        }
+
+        .feature-list h4 {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-list p {
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        @media (min-width: 640px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .service-icon {
+            width: clamp(50px, 8vw, 60px);
+            height: clamp(50px, 8vw, 60px);
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-card h3 {
+            color: var(--gray-800);
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(1.125rem, 2.25vw, 1.25rem);
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-lg);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+        }
+
+        .service-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: var(--transition);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+        }
+
+        .service-link:hover {
+            gap: var(--spacing-md);
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-4xl);
+            }
+        }
+
+        .features-content h2 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .features-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        @media (min-width: 640px) {
+            .features-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (min-width: 640px) {
+            .feature-item {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        .feature-item-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .feature-item-content h4 {
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .feature-item-content p {
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .features-visual {
+            position: relative;
+            order: -1;
+        }
+
+        @media (min-width: 1024px) {
+            .features-visual {
+                order: 0;
+            }
+        }
+
+        .features-image {
+            width: 100%;
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--gray-100);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        @media (min-width: 768px) {
+            .process-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .process-card {
+            text-align: center;
+            padding: var(--spacing-xl);
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary), var(--purple), var(--secondary));
+            border-radius: var(--border-radius-lg);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .process-card:hover::before {
+            opacity: 1;
+        }
+
+        .process-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .process-number {
+            width: clamp(50px, 8vw, 60px);
+            height: clamp(50px, 8vw, 60px);
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 800;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .process-card h3 {
+            color: var(--gray-800);
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(1.125rem, 2.25vw, 1.25rem);
+        }
+
+        .process-card p {
+            color: var(--gray-600);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        @media (min-width: 640px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .team-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        @media (min-width: 640px) {
+            .team-image {
+                height: 300px;
+            }
+        }
+
+        .team-card:hover .team-image {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .team-info h3 {
+            color: var(--gray-800);
+            margin-bottom: var(--spacing-sm);
+            font-size: clamp(1rem, 2vw, 1.125rem);
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.875rem;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-3xl);
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-4xl);
+            }
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (min-width: 640px) {
+            .contact-item {
+                align-items: center;
+                padding: var(--spacing-lg);
+            }
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.125rem;
+        }
+
+        .contact-item h4 {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .contact-item p {
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+        }
+
+        @media (min-width: 640px) {
+            .contact-form {
+                padding: var(--spacing-2xl);
+            }
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            color: var(--white);
+            font-family: var(--font-primary);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+            transition: var(--transition);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+                margin-bottom: var(--spacing-2xl);
+            }
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(1rem, 2vw, 1.125rem);
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--spacing-xl);
+            right: var(--spacing-xl);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+            font-size: 1.125rem;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: var(--spacing-md);
+                right: var(--spacing-md);
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--gray-200);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Utility Classes for Better Mobile Experience */
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .min-h-screen { min-height: 100vh; }
+
+        .overflow-hidden { overflow: hidden; }
+        .overflow-x-hidden { overflow-x: hidden; }
+
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .fixed { position: fixed; }
+
+        .z-10 { z-index: 10; }
+        .z-20 { z-index: 20; }
+        .z-50 { z-index: 50; }
+
+        /* Focus States for Accessibility */
+        .btn:focus,
+        .nav-link:focus,
+        .form-input:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.3);
+                --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .navbar,
+            .back-to-top,
+            .loading {
+                display: none !important;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+            
+            .section {
+                padding: 1rem 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
     </div>
-    <!-- Spinner End -->
 
-
-  
-
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0 text-dark"><i class="far fa-hospital me-3"></i>MediGo</h1>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#howitworks" class="nav-item nav-link">how it works </a>
-                <a href="#team" class="nav-item nav-link">team</a>
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#home" class="navbar-brand">
+                <i class="fas fa-pills"></i>
+                MediGo
+            </a>
+            <ul class="navbar-nav" id="navbar-nav">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#contact" class="btn btn-primary">Contact</a></li>
+            </ul>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
-    <!-- Navbar End -->
 
-
-    <!-- Header Start -->
-
-<!-- Header Start -->
-<div class="container-fluid bg-dark text-white py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Left Content -->
-            <div class="col-lg-6">
-                <h1 class="display-4 fw-bold text-white ">Your Trusted Digital Pharmacy</h1>
-                <p class="lead mb-4">Bringing safe, certified, and affordable healthcare solutions to your doorstep.</p>
-
-                <!-- Trust & Safety Icons -->
-                <div class="d-flex flex-wrap gap-3 mb-4">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-certificate text-success fa-2x me-2"></i>
-                        <p class="mb-0">Certified & Verified Medications</p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-lock text-primary fa-2x me-2"></i>
-                        <p class="mb-0">Secure Transactions</p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-truck text-info fa-2x me-2"></i>
-                        <p class="mb-0">Fast & Reliable Delivery</p>
-                    </div>
-                </div>
-
-                <!-- Call to Action Buttons -->
-                <div class="d-flex gap-3">
-                    <a class="btn btn-success rounded-pill px-4 py-3 fw-bold" href="#about">Learn More</a>
-                    <a class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold" href="#contact">Get in Touch</a>
-                </div>
-            </div>
-
-            <!-- Right Image -->
-            <div class="col-lg-6 text-center">
-                <img src="img/pharmacy-banner.jpg" class="img-fluid rounded shadow-lg" alt="Online Pharmacy">
-            </div>
+    <!-- Hero Section -->
+    <section class="hero py-16 lg:py-20" id="home">
+        <div class="memphis-bg">
+            <div class="memphis-shape"></div>
+            <div class="memphis-shape"></div>
+            <div class="memphis-shape"></div>
+            <div class="memphis-shape"></div>
+            <div class="memphis-dots" style="top: 20%; right: 10%;"></div>
+            <div class="memphis-dots" style="bottom: 30%; left: 5%;"></div>
+            <div class="memphis-zigzag" style="top: 60%;"></div>
         </div>
-    </div>
-</div>
-
-
-
-
-  <!-- About Start -->
-<div id="about" class="container-fluid py-5 bg-light">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <!-- Image Section -->
-            <div class="col-lg-6">
-                <div class="position-relative">
-                    <img class="img-fluid rounded shadow w-100" src="img/about-1.jpg" alt="Our Team">
-                    <img class="img-fluid rounded shadow-lg position-absolute bg-white p-2" 
-                         src="img/about-2.jpg" alt="Our Work" 
-                         style="width: 45%; bottom: -20px; right: -20px;">
-                </div>
-            </div>
-
-            <!-- Text Section -->
-            <div class="col-lg-6">
-                <p class="text-uppercase text-primary fw-bold small mb-2">About Us</p>
-                <h1 class="fw-bold mb-4 text-dark">Medigo Kenya – Revolutionizing Pharmacy Access</h1>
-                <p class="text-muted">
-                    MediGo Kenya is a digital platform dedicated to improving patient care by ensuring access to the right medications at the right time. We bridge the gap between pharmacies, suppliers, and patients to create a seamless healthcare experience.
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="display-1 fade-in">
+                    Revolutionary <span class="text-gradient">Digital Pharmacy</span> for Kenya
+                </h1>
+                <p class="fade-in">
+                    Transforming healthcare access with cutting-edge technology, ensuring every Kenyan has access to safe, certified, and affordable medications delivered right to their doorstep.
                 </p>
-
-                <!-- Mission -->
-                <div class="mb-4">
-                    <h4 class="text-primary"><i class="fas fa-bullseye me-2"></i> Our Mission</h4>
-                    <p class="text-muted">Enhancing patient health outcomes by making it easier for pharmacies to stock essential medications, track inventory efficiently, and provide better treatment support.</p>
+                
+                <div class="hero-stats fade-in">
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Medications Available</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Customer Support</span>
+                    </div>
                 </div>
-
-                <!-- Vision -->
-                <div class="mb-4">
-                    <h4 class="text-primary"><i class="fas fa-eye me-2"></i> Our Vision</h4>
-                    <p class="text-muted">A healthcare system where every patient can access the medication they need without delays, and pharmacies are empowered to serve their communities more effectively.</p>
+                
+                <div class="flex flex-wrap gap-3 btn-group fade-in">
+                    <a href="#about" class="btn btn-primary">
+                        Discover More
+                        <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-ghost">
+                        Get Started
+                        <i class="fas fa-play" style="margin-left: 0.5rem;"></i>
+                    </a>
                 </div>
-
-                <!-- Why Choose MediGo? -->
-                <h4 class="text-primary"><i class="fas fa-check-circle me-2"></i> Why Choose MediGo Kenya?</h4>
-                <ul class="list-unstyled text-muted">
-                    <li><i class="fas fa-pills text-success me-2"></i> Ensuring Medicine Availability – Patients should never struggle to find essential medications.</li>
-                    <li><i class="fas fa-link text-success me-2"></i> Connecting Pharmacies & Suppliers – A reliable network to prevent stockouts.</li>
-                    <li><i class="fas fa-heartbeat text-success me-2"></i> Improving Treatment & Feedback – Empowering patients with better follow-ups and pharmacy support.</li>
-                </ul>
-
-                <!-- Call to Action -->
-                <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="#">Learn More</a>
+            </div>
+            
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Digital Pharmacy" class="hero-image scale-in">
+                
             </div>
         </div>
-    </div>
-</div>
-<!-- About End -->
+    </section>
 
-
-
-   <!-- Services Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <p class="d-inline-block border rounded-pill py-1 px-4">Our Services</p>
-            <h1>Pharmaceutical Solutions</h1>
+    <!-- About Section -->
+    <section class="section about py-12 md:py-16 lg:py-20" id="about">
+        <div class="memphis-bg">
+            <div class="memphis-dots" style="top: 10%; right: 5%;"></div>
+            <div class="memphis-shape" style="bottom: 20%; left: 10%; background: var(--secondary);"></div>
         </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item bg-light rounded h-100 p-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-pills text-primary fs-4"></i>
-                    </div>
-                    <h4 class="mb-3">Prescription Management</h4>
-                    <p class="mb-4">Easily upload, manage, and reorder prescriptions with secure verification.</p>
-                    <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
+        
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="About MediGo" class="about-image-main">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pharmacy Services" class="about-image-overlay">
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item bg-light rounded h-100 p-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-truck-medical text-primary fs-4"></i>
-                    </div>
-                    <h4 class="mb-3">Home Delivery & Pickup</h4>
-                    <p class="mb-4">Get medications delivered to your doorstep or pick up from a nearby pharmacy.</p>
-                    <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item bg-light rounded h-100 p-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-capsules text-primary fs-4"></i>
-                    </div>
-                    <h4 class="mb-3">Over-the-Counter Medications</h4>
-                    <p class="mb-4">Browse and buy a wide range of health and wellness products online.</p>
-                    <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item bg-light rounded h-100 p-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-bell text-primary fs-4"></i>
-                    </div>
-                    <h4 class="mb-3">Medication Reminders</h4>
-                    <p class="mb-4">Set up automatic refill alerts and reminders for your prescriptions.</p>
-                    <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item bg-light rounded h-100 p-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-comments-medical text-primary fs-4"></i>
-                    </div>
-                    <h4 class="mb-3">24/7 Customer Support</h4>
-                    <p class="mb-4">Get assistance with orders, prescriptions, and general healthcare inquiries.</p>
-                    <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item bg-light rounded h-100 p-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                        <i class="fa fa-shield-virus text-primary fs-4"></i>
-                    </div>
-                    <h4 class="mb-3">Secure & Verified Medications</h4>
-                    <p class="mb-4">Ensure safety with pharmacist-approved prescriptions and quality checks.</p>
-                    <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Services End -->
-
-   <!-- Feature Start -->
-<div class="container-fluid bg-dark overflow-hidden my-5 px-lg-0">
-    <div class="container feature px-lg-0">
-        <div class="row g-0 mx-lg-0">
-            <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
-                <div class="p-lg-5 ps-lg-0">
-                    <p class="d-inline-block border rounded-pill text-light py-1 px-4">Project Features</p>
-                    <h1 class="text-white mb-4">Why Choose us</h1>
-                    <p class="text-white mb-4 pb-2">Medigo is built with cutting-edge technologies, ensuring efficiency, scalability, and user-friendly experiences. We focus on delivering high-quality solutions that solve real-world problems.</p>
-                    <div class="row g-4">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                    <i class="fa fa-laptop-code text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-white mb-2">Modern</p>
-                                    <h5 class="text-white mb-0">Tech Stack</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                    <i class="fa fa-users text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-white mb-2">Collaborative</p>
-                                    <h5 class="text-white mb-0">Teamwork</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                    <i class="fa fa-shield-alt text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-white mb-2">Secure</p>
-                                    <h5 class="text-white mb-0">Data Handling</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                    <i class="fa fa-cogs text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-white mb-2">Efficient</p>
-                                    <h5 class="text-white mb-0">Performance</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid w-100 h-100" src="img/project-feature.jpg" style="object-fit: cover;" alt="Project Feature">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Feature End -->
-
-
-<!-- Team Start -->
-<div id="team" class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <p class="d-inline-block border rounded-pill py-1 px-4">Our Team</p>
-            <h1>Meet Our Team</h1>
-            <p class="mb-5">We are a dedicated team of professionals building this project with passion and expertise.</p>
-        </div>
-        <!-- First Row -->
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/frontend.jpg" alt="Frontend Developer">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>Frontend Developer</h5>
-                        <p class="text-primary">Bringing the UI to life</p>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href="https://github.com/yvonnegat"><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square" href="https://www.linkedin.com/in/yvonne-gatwiri-mwita/"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/backend.jpg" alt="Backend Developer">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>Backend Developer</h5>
-                        <p class="text-primary">Building the system logic</p>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href=""><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square" href=""><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/uiux.jpg" alt="UI/UX Designer">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>UI/UX Designer</h5>
-                        <p class="text-primary">Crafting intuitive experiences</p>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href=""><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square" href=""><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Second Row -->
-        <div class="row g-4 mt-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/techwriter.jpg" alt="Technical Writer">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>Technical Writer</h5>
-                        <p class="text-primary">Documenting the journey</p>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href=""><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square" href="https://www.linkedin.com/in/beatrice-njenga"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/database.jpg" alt="Database Engineer">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>Database Engineer</h5>
-                        <p class="text-primary">Structuring the data</p>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href=""><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square" href="http://www.linkedin.com/in/paul-mathu"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Empty Space to Maintain Grid Structure -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp d-none d-lg-block"></div>
-        </div>
-    </div>
-</div>
-
-
-<div id="howitworks" class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <p class="d-inline-block border rounded-pill py-1 px-4">How It Works</p>
-            <h1 class="mb-4">Easy Steps To Get Your Medicine</h1>
-            <p class="mb-5">Order your medicines hassle-free in just a few simple steps.</p>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="text-center p-4 bg-light rounded">
-                    <div class="d-flex align-items-center justify-content-center mb-3">
-                        <i class="fa fa-search fa-3x text-primary"></i>
-                    </div>
-                    <h5>Browse & Select</h5>
-                    <p>Find the medicines you need from our wide range of healthcare products.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="text-center p-4 bg-light rounded">
-                    <div class="d-flex align-items-center justify-content-center mb-3">
-                        <i class="fa fa-shopping-cart fa-3x text-primary"></i>
-                    </div>
-                    <h5>Place Your Order</h5>
-                    <p>Add products to your cart and proceed with a secure checkout.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="text-center p-4 bg-light rounded">
-                    <div class="d-flex align-items-center justify-content-center mb-3">
-                        <i class="fa fa-truck fa-3x text-primary"></i>
-                    </div>
-                    <h5>Fast Delivery</h5>
-                    <p>Get your order delivered quickly and safely to your doorstep.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- How It Works End -->
-
-
-
-
-    <!-- Footer Start -->
-    <footer class="footer bg-dark text-light mt-5 pt-5">
-    <div class="container py-5">
-        <div class="row g-4">
-            <!-- Address Section -->
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">location</h5>
-                <p><i class="fa fa-map-marker-alt me-2"></i> Nairobi, Kenya</p>
-                <p><i class="fa fa-phone-alt me-2"></i> +254 793 807 758</p>
-                <div class="d-flex">
-                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <!-- Services Section -->
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Our Services</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-light">Prescription Medications</a></li>
-                    <li><a href="#" class="text-light">Over-the-Counter Drugs</a></li>
-                    <li><a href="#" class="text-light">Health Consultations</a></li>
-                    <li><a href="#" class="text-light">Home Delivery</a></li>
-                    <li><a href="#" class="text-light">Refill Reminders</a></li>
-                </ul>
-            </div>
-
-            <!-- Quick Links Section -->
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#about" class="text-light">About Us</a></li>
-                    <li><a href="#" class="text-light">Contact Us</a></li>
+                
+                <div class="about-content slide-in-right">
+                    <span class="section-badge">About MediGo</span>
+                    <h2 class="display-3">Revolutionizing Healthcare Access Across Kenya</h2>
+                    <p>MediGo Kenya is more than just a digital pharmacy – we're a comprehensive healthcare ecosystem designed to bridge the gap between patients, pharmacies, and healthcare providers. Our mission is to ensure that quality healthcare is accessible, affordable, and available to every Kenyan, regardless of their location.</p>
                     
-                </ul>
-            </div>
-
-            <!-- Newsletter Subscription -->
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Stay Updated</h5>
-                <p>Subscribe to receive the latest updates on medications and health tips.</p>
-                <div class="newsletter">
-                    <input type="email" class="form-control border-0 mb-2" placeholder="Enter your email">
-                    <button class="btn btn-primary w-100">Email</button>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div>
+                                <h4>Our Mission</h4>
+                                <p>Enhancing patient health outcomes by making essential medications easily accessible and ensuring pharmacies can serve their communities effectively.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div>
+                                <h4>Our Vision</h4>
+                                <p>A healthcare system where every patient can access the medication they need without delays, powered by technology and human compassion.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4>Our Values</h4>
+                                <p>Safety, accessibility, innovation, and community-first approach guide everything we do at MediGo Kenya.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="#services" class="btn btn-primary">Explore Our Services</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Copyright Section -->
-    <div class="container text-center border-top pt-4">
-        <p class="mb-0">&copy; 2025 <a href="#">MediGo Kenya</a>. All Rights Reserved.</p>
-    </div>
-</footer>
+    <!-- Services Section -->
+    <section class="section services py-12 md:py-16 lg:py-20" id="services">
+        <div class="memphis-bg">
+            <div class="memphis-shape" style="top: 15%; right: 10%; background: var(--accent);"></div>
+            <div class="memphis-dots" style="bottom: 20%; left: 5%;"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title display-3">Comprehensive Healthcare Solutions</h2>
+                <p class="section-description">From prescription management to home delivery, we provide end-to-end pharmaceutical services designed to meet all your healthcare needs.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <h3>Smart Prescription Management</h3>
+                    <p>Upload, manage, and track your prescriptions with our intelligent system. Get automatic refill reminders and dosage notifications.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Express Delivery Network</h3>
+                    <p>Same-day delivery in major cities, next-day delivery nationwide. Track your order in real-time with our advanced logistics system.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Verified Medications</h3>
+                    <p>Browse thousands of certified medications and health products. Every item is verified for authenticity and quality.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Pharmacist Consultations</h3>
+                    <p>Connect with licensed pharmacists for medication advice, drug interactions, and health consultations via video or chat.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3> Health App</h3>
+                    <p>Manage your health on-the-go with our mobile app. Set medication reminders, track health metrics, and order refills.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support Center</h3>
+                    <p>Round-the-clock customer support for urgent medication needs, order assistance, and health emergencies.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer End -->
+    <!-- Features Section -->
+    <section class="section features py-12 md:py-16 lg:py-20" id="features">
+        <div class="memphis-bg">
+            <div class="memphis-dots" style="top: 20%; left: 10%;"></div>
+            <div class="memphis-shape" style="bottom: 30%; right: 15%; background: var(--secondary);"></div>
+        </div>
+        
+        <div class="container">
+            <div class="features-grid">
+                <div class="features-content slide-in-left">
+                    <span class="section-badge">Why Choose MediGo</span>
+                    <h2 class="display-3">Built with Cutting-Edge Technology</h2>
+                    <p>Our platform leverages the latest in healthcare technology, artificial intelligence, and secure data management to provide you with the most reliable and efficient pharmacy experience.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-item-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-item-content">
+                                <h4>AI-Powered Recommendations</h4>
+                                <p>Smart medication suggestions and health insights</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-item-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-item-content">
+                                <h4>Bank-Level Security</h4>
+                                <p>Your health data is protected with enterprise-grade encryption</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-item-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                            <div class="feature-item-content">
+                                <h4>Real-Time Sync</h4>
+                                <p>Seamless synchronization across all your devices</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-item-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-item-content">
+                                <h4>Health Analytics</h4>
+                                <p>Track your health progress with detailed insights</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-secondary">Get Started Today</a>
+                </div>
+                
+                <div class="features-visual slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Technology Features" class="features-image">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Process Section -->
+    <section class="section process py-12 md:py-16 lg:py-20" id="process">
+        <div class="memphis-bg">
+            <div class="memphis-shape" style="top: 10%; left: 5%; background: var(--purple);"></div>
+            <div class="memphis-dots" style="bottom: 15%; right: 10%;"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">How It Works</span>
+                <h2 class="section-title display-3">Simple Steps to Better Health</h2>
+                <p class="section-description">Getting your medications has never been easier. Follow these simple steps to start your journey with MediGo.</p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-card fade-in">
+                    <div class="process-number">1</div>
+                    <h3>Browse & Search</h3>
+                    <p>Search our extensive catalog of verified medications and health products. Use our smart filters to find exactly what you need quickly.</p>
+                </div>
+                
+                <div class="process-card fade-in">
+                    <div class="process-number">2</div>
+                    <h3>Upload Prescription</h3>
+                    <p>Securely upload your prescription or consult with our licensed pharmacists. Our AI system verifies and processes your order instantly.</p>
+                </div>
+                
+                <div class="process-card fade-in">
+                    <div class="process-number">3</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Receive your medications at your doorstep with our express delivery network. Track your order in real-time from pharmacy to your door.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team py-12 md:py-16 lg:py-20" id="team">
+        <div class="memphis-bg">
+            <div class="memphis-dots" style="top: 25%; left: 5%;"></div>
+            <div class="memphis-shape" style="bottom: 20%; right: 10%; background: var(--accent);"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Our Team</span>
+                <h2 class="section-title display-3">Meet the Innovators</h2>
+                <p class="section-description">Our diverse team of healthcare professionals, technologists, and innovators are passionate about transforming healthcare access in Kenya.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <img src="./img/frontend.jpg" alt="Frontend Developer" class="team-image">
+                    <div class="team-info">
+                        <h3>Yvonne Gatwiri</h3>
+                        <p class="team-role">Frontend Developer</p>
+                        <div class="team-social">
+                            <a href="https://github.com/yvonnegat" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/yvonne-gatwiri-mwita/" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <img src="./img/backend.jpg" alt="Backend Developer" class="team-image">
+                    <div class="team-info">
+                        <h3>Backend Developer</h3>
+                        <p class="team-role">System Architecture</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <img src="./img/uiux.jpg" alt="UI/UX Designer" class="team-image">
+                    <div class="team-info">
+                        <h3>UI/UX Designer</h3>
+                        <p class="team-role">User Experience</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Dribbble">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <img src="./img/techwriter.jpg" alt="Technical Writer" class="team-image">
+                    <div class="team-info">
+                        <h3>Beatrice Njenga</h3>
+                        <p class="team-role">Technical Writer</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/beatrice-njenga" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Medium">
+                                <i class="fab fa-medium"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <img src="./img/database.jpg" alt="Database Engineer" class="team-image">
+                    <div class="team-info">
+                        <h3>Paul Mathu</h3>
+                        <p class="team-role">Database Engineer</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="http://www.linkedin.com/in/paul-mathu" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact py-12 md:py-16 lg:py-20" id="contact">
+        <div class="memphis-bg">
+            <div class="memphis-shape" style="top: 15%; right: 5%; background: var(--secondary);"></div>
+            <div class="memphis-dots" style="bottom: 25%; left: 10%;"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title display-3 text-white">Ready to Transform Your Healthcare?</h2>
+                <p class="section-description" style="color: rgba(255, 255, 255, 0.8);">Have questions about our services or ready to get started? Our team is here to help you every step of the way.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info slide-in-left">
+                    <h3>Let's Connect</h3>
+                    <p>Reach out to us through any of these channels, and we'll get back to you as soon as possible.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Nairobi, Kenya<br>East Africa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+254 123456789<br>Available 24/7</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@medigokenya.com<br>support@medigokenya.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form slide-in-right">
+                    <h3 style="color: var(--white); margin-bottom: var(--spacing-lg);">Send Us a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this about?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us more about your inquiry..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full">
+                            Send Message
+                            <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-8 md:py-12">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section fade-in">
+                    <h4>MediGo Kenya</h4>
+                    <p>Revolutionizing healthcare access across Kenya with cutting-edge technology and compassionate service. Your health, our priority.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section fade-in">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Prescription Management</a></li>
+                        <li><a href="#">Express Delivery</a></li>
+                        <li><a href="#">Pharmacist Consultations</a></li>
+                        <li><a href="#">Health Monitoring</a></li>
+                        <li><a href="#">Emergency Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section fade-in">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section fade-in">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for health tips, medication updates, and exclusive offers.</p>
+                    <form id="newsletter-form" style="margin-top: var(--spacing-md);">
+                        <div class="flex gap-2">
+                            <input type="email" name="newsletter-email" class="form-input" placeholder="Your email address" style="flex: 1;" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediGo Kenya. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for better healthcare</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
+    <!-- JavaScript -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1000);
+        });
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        // Navbar Scroll Effect and Mobile Toggle
+        const navbar = document.getElementById('navbar');
+        const navbarNav = document.getElementById('navbar-nav');
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navLinks = document.querySelectorAll('.nav-link');
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Update active nav link
+            const sections = document.querySelectorAll('section');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile Navigation Toggle
+        navbarToggle.addEventListener('click', function() {
+            navbarNav.classList.toggle('active');
+            navbarToggle.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarNav.classList.remove('active');
+                navbarToggle.classList.remove('active');
+            });
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navbar.contains(e.target)) {
+                navbarNav.classList.remove('active');
+                navbarToggle.classList.remove('active');
+            }
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submissions
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                submitBtn.style.background = 'var(--success)';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 2000);
+        });
+
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button');
+            const originalHTML = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i>';
+                submitBtn.style.background = 'var(--success)';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Interactive hover effects
+        document.querySelectorAll('.service-card, .team-card, .process-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for Memphis shapes
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.memphis-shape, .memphis-dots');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                navbarNav.classList.remove('active');
+                navbarToggle.classList.remove('active');
+            }
+        });
+
+        // Touch support for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.changedTouches[0].screenY;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndY < touchStartY - 50) {
+                // Swipe up - hide mobile nav if open
+                navbarNav.classList.remove('active');
+                navbarToggle.classList.remove('active');
+            }
+        }
+
+        // Performance optimization - debounce scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply debouncing to scroll events
+        const debouncedScrollHandler = debounce(function() {
+            // Scroll-dependent operations here
+        }, 10);
+
+        window.addEventListener('scroll', debouncedScrollHandler);
+
+        // Preload critical images
+        const criticalImages = [
+            'https://images.unsplash.com/photo-1576091160550-2173dba999ef',
+            'https://images.unsplash.com/photo-1559757148-5c350d0d3c56',
+            'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae'
+        ];
+
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src + '?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+        });
+
+        // Initialize all functionality when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loaded class to body for CSS transitions
+            document.body.classList.add('loaded');
+            
+            // Initialize any additional components here
+            console.log('MediGo website initialized successfully!');
+        });
+    </script>
 </body>
 
 </html>
